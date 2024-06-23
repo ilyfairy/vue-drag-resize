@@ -364,6 +364,7 @@ export default {
         },
 
         bodyMove(delta) {
+            console.log(delta);
             const { dimensionsBeforeMove, parentWidth, parentHeight, gridX, gridY, width, height } =
                 this;
 
@@ -717,6 +718,28 @@ export default {
             }
 
             return { newLeft, newRight, newTop, newBottom };
+        },
+
+        setSize(width, height) {
+            this.right = this.parentWidth - width - this.left;
+            this.bottom = this.parentHeight - height - this.top;
+            console.log(this);
+
+            this.$nextTick(() => {
+                this.bodyUp();
+            });
+        },
+
+        moveTo(x, y) {
+            const width = this.width;
+            const height = this.height;
+
+            this.left = x;
+            this.top = y;
+            this.right = this.parentWidth - this.left - width;
+            this.bottom = this.parentHeight - this.top - height;
+
+            this.$emit('dragging', this.rect);
         },
     },
 
