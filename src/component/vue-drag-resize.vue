@@ -364,7 +364,6 @@ export default {
         },
 
         bodyMove(delta) {
-            console.log(delta);
             const { dimensionsBeforeMove, parentWidth, parentHeight, gridX, gridY, width, height } =
                 this;
 
@@ -855,7 +854,6 @@ export default {
                 if (this.stickDrag || this.bodyDrag || newVal === this.width) {
                     return;
                 }
-                window.console.log('oldValue: ', oldVal, 'newValue', newVal);
 
                 const stick = 'mr';
                 const delta = oldVal - newVal;
