@@ -723,11 +723,9 @@ export default {
         setSize(width, height) {
             this.right = this.parentWidth - width - this.left;
             this.bottom = this.parentHeight - height - this.top;
-            console.log(this);
 
-            this.$nextTick(() => {
-                this.bodyUp();
-            });
+            this.bodyUp();
+            this.$emit('resizing', this.rect);
         },
 
         moveTo(x, y) {
