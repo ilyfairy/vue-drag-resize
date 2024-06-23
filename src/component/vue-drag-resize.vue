@@ -727,6 +727,11 @@ export default {
             this.$emit('resizing', this.rect);
         },
 
+        setSizeInternal(width, height) {
+            this.right = this.parentWidth - width - this.left;
+            this.bottom = this.parentHeight - height - this.top;
+        },
+
         moveTo(x, y) {
             const width = this.width;
             const height = this.height;
