@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { merge } = require('webpack-merge');
-const common = require('./webpack.common');
+const common = require('./webpack.common.js');
 const paths = require('./paths');
 
 module.exports = merge(common, {
